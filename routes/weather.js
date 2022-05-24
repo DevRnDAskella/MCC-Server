@@ -1,6 +1,6 @@
 const weatherRouter = require("express").Router();
-const { getWeather } = require("../controllers");
+const { getMetar } = require("../controllers");
 
-weatherRouter.get("/weather", getWeather);
+weatherRouter.get("/weather/:icaoCode", getMetar);
 
 module.exports = weatherRouter;
