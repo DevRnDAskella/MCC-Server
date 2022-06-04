@@ -1,4 +1,4 @@
-const { getWeather } = require("../services/api/");
+const { getWeather } = require("../services/api");
 const { Metar } = require("../models");
 
 exports.getMetar = async (req, res) => {
