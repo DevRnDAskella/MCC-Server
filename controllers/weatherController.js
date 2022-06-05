@@ -8,6 +8,13 @@ exports.getMetar = async (req, res) => {
   res.send(response.data);
 };
 
+exports.getWeather = async (req, res) => {
+  const { data } = req.query;
+  const response = await getWeather(data);
+
+  res.json(response.data.data);
+};
+
 exports.saveMetar = async (req, res) => {
   const { icaoCode } = req.params;
   const response = await getWeather(icaoCode);

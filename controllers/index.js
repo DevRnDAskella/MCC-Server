@@ -1,4 +1,4 @@
-const { getMetar, saveMetar } = require("./weatherController");
+const { getMetar, saveMetar, getWeather } = require("./weatherController");
 const { getAccess, getLogout } = require("./authController");
 
 module.exports = {
@@ -6,4 +6,5 @@ module.exports = {
   saveMetar,
   getAccess,
   getLogout,
+  getWeather
 };
