@@ -1,4 +1,4 @@
-const { getWeather } = require("../services/api");
+const { getData } = require("../services/api");
 const { Metar } = require("../models");
 
 exports.getMetar = async (req, res) => {
@@ -9,10 +9,17 @@ exports.getMetar = async (req, res) => {
 };
 
 exports.getWeather = async (req, res) => {
-  const { data } = req.query;
-  const response = await getWeather(data);
+  const { data, isTaf } = req.query;
+  const resData = {};
+  const options = Boolean(Number(isTaf));
+  if (options) {
+    const responseTaf = await getData(data, options);
+    resData.taf = responseTaf.data.data;
+  }
+  const responseMetar = await getData(data);
+  resData.metar = responseMetar.data.data;
 
-  res.json(response.data.data);
+  res.json(resData);
 };
 
 exports.saveMetar = async (req, res) => {

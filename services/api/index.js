@@ -1,5 +1,5 @@
-const { getWeather } = require("./weather-api");
+const { getData } = require("./weather-api");
 
 module.exports = {
-  getWeather,
+  getData,
 };

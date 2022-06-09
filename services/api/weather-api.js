@@ -4,8 +4,9 @@ const instance = axios.create({
   headers: { "X-API-Key": process.env.WEATHER_API_KEY },
 });
 
-exports.getWeather = (subURL, options = { typeRequest: "metar" }) => {
-  const { typeRequest } = options;
-
-  return instance.get(`${typeRequest}/${subURL}`);
+exports.getData = (subURL, extended) => {
+  if (extended) {
+    return instance.get(`taf/${subURL}`);
+  }
+  return instance.get(`metar/${subURL}`);
 };
