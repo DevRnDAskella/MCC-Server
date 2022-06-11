@@ -1,4 +1,3 @@
-const { timeStamp } = require("console");
 const { model, Schema } = require("mongoose");
 
 const metarSchema = new Schema({

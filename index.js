@@ -5,7 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 // ======== INNER IMPORTS ========
 
-const { weatherRouter, authRouter } = require("./routes");
+const { weatherRouter, authRouter, aircraftsRouter } = require("./routes");
 
 // ========  CONFIGURATION ========
 const app = express();
@@ -35,3 +35,4 @@ app.listen(process.env.SERVER_PORT, (err) => {
 
 app.use(weatherRouter);
 app.use(authRouter);
+app.use(aircraftsRouter);
