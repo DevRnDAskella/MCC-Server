@@ -1,5 +1,5 @@
 const { getData } = require("../services/api");
-const { Metar } = require("../models");
+const { Weather } = require("../models");
 
 exports.getMetar = async (req, res) => {
   const { icaoCode } = req.params;
@@ -10,8 +10,8 @@ exports.getMetar = async (req, res) => {
 
 exports.getWeather = async (req, res) => {
   const { data, isTaf } = req.query;
-  const resData = {};
   const options = Boolean(Number(isTaf));
+  const resData = {};
   if (options) {
     const responseTaf = await getData(data, options);
     resData.taf = responseTaf.data.data;
@@ -26,7 +26,7 @@ exports.saveMetar = async (req, res) => {
   const { icaoCode } = req.params;
   const response = await getWeather(icaoCode);
 
-  const answer = await Metar.create({ rawData: response.data.data[0] });
+  const answer = await Weather.create({ metar: response.data.data[0] });
 
   res.send(201, answer);
 };
