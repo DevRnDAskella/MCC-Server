@@ -5,17 +5,30 @@ const aircraftModificationSchema = new Schema({
     type: String,
     required: true,
   },
+  type: {
+    type: Schema.Types.ObjectId,
+  },
   weightLimits: {
-    feulTank: {},
-    MLW: {},
-    MTOW: {},
-    MTW: {}, // === MRW
-    MZFW: {},
+    feulTank: {
+      type: Number,
+    },
+    MLW: {
+      type: Number,
+    },
+    MTOW: {
+      type: Number,
+    },
+    MTW: {
+      type: Number,
+    }, // === MRW
+    MZFW: {
+      type: Number,
+    },
   },
 });
 
 const AircraftModification = model(
-  "aircraft-modifications",
+  "aircraft_modifications",
   aircraftModificationSchema
 );
 

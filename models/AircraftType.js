@@ -2,13 +2,13 @@ const { model, Schema } = require("mongoose");
 
 const AircraftTypeSchema = new Schema({
   name: {
-    icao: {}, // SU95
-    local: {}, // RRJ95
-    common: {}, // Sukhoi Superjet 100
+    icao: String, // SU95
+    local: String, // RRJ95
+    common: String, // Sukhoi Superjet 100
   },
   modifications: [Schema.Types.ObjectId],
 });
 
-const AircraftType = model("aircraft-types", AircraftTypeSchema);
+const AircraftType = model("aircraft_types", AircraftTypeSchema);
 
 module.exports = AircraftType;
