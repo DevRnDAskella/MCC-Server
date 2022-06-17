@@ -6,6 +6,8 @@ const Organisation = require("./Organisation");
 const Contact = require("./Contact");
 const Aerodrome = require("./Aerodrome");
 const AircraftModification = require("./AircraftModification");
+const Briefcase = require("./Briefcase");
+const Efb = require("./Efb");
 
 module.exports = {
   Weather,
@@ -16,4 +18,6 @@ module.exports = {
   Organisation,
   Contact,
   Aerodrome,
+  Briefcase,
+  Efb,
 };

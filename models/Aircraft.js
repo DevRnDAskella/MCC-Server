@@ -31,12 +31,18 @@ const aircraftSchema = new Schema({
   ],
   equipment: {
     efb: {
-      isInStock: {},
-      listEfb: {},
+      isInStock: {
+        type: Boolean,
+      },
+      listEfb: {
+        type: [Schema.Types.ObjectId],
+      },
     },
     briefcase: {
       isInStock: {},
-      listBriefcase: {},
+      listBriefcase: {
+        type: Schema.Types.ObjectId,
+      },
     },
     aip: {
       isInStock: {},

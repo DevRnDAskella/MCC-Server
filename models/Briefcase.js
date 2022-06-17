@@ -11,6 +11,6 @@ const briefcaseSchema = new Schema({
   },
 });
 
-const Briefcase = model("briedcases", briefcaseSchema);
+const Briefcase = model("briefcases", briefcaseSchema);
 
-export default Briefcase;
+module.exports = Briefcase;

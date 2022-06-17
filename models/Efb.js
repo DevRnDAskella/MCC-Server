@@ -10,4 +10,5 @@ const efbSchema = new Schema({
 
 const Efb = model("efbs", efbSchema);
 
-export default Efb;
+module.exports = Efb;
+
