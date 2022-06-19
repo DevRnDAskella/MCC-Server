@@ -14,6 +14,4 @@ const weatherSchema = new Schema({
   },
 });
 
-const Weather = model("weather", weatherSchema);
-
-module.exports = Weather;
+module.exports = model("weather", weatherSchema);

@@ -7,13 +7,15 @@ const aircraftSchema = new Schema({
   },
   type: {
     type: Schema.Types.ObjectId,
+    ref: "aircraft_types",
     required: true,
   },
   modification: {
     type: Schema.Types.ObjectId,
+    ref: "aircraft_modifications",
     required: true,
   },
-  owners: [Schema.Types.ObjectId],
+  owners: [{ type: Schema.Types.ObjectId, ref: "organisations" }],
   faults: [
     {
       desc: {
@@ -34,23 +36,21 @@ const aircraftSchema = new Schema({
       isInStock: {
         type: Boolean,
       },
-      listEfb: {
-        type: [Schema.Types.ObjectId],
-      },
+      listEfb: [{ type: Schema.Types.ObjectId, ref: "efbs" }],
     },
     briefcase: {
-      isInStock: {},
-      listBriefcase: {
-        type: Schema.Types.ObjectId,
+      isInStock: {
+        type: Boolean,
       },
+      listBriefcase: [{ type: Schema.Types.ObjectId, ref: "briefcases" }],
     },
     aip: {
-      isInStock: {},
-      listAip: {},
+      isInStock: {
+        type: Boolean,
+      },
+      listAip: [{ type: Schema.Types.ObjectId, ref: "aips" }],
     },
   },
 });
 
-const Aircraft = model("aircrafts", aircraftSchema);
-
-module.exports = Aircraft;
+module.exports = model("aircrafts", aircraftSchema);

@@ -6,11 +6,7 @@ const briefcaseSchema = new Schema({
     required: true,
     unique: true,
   },
-  listAip: {
-    type: [Schema.Types.ObjectId],
-  },
+  listAip: [{ type: Schema.Types.ObjectId, ref: "aips" }],
 });
 
-const Briefcase = model("briefcases", briefcaseSchema);
-
-module.exports = Briefcase;
+module.exports = model("briefcases", briefcaseSchema);

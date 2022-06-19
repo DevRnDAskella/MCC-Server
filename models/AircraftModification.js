@@ -7,6 +7,7 @@ const aircraftModificationSchema = new Schema({
   },
   type: {
     type: Schema.Types.ObjectId,
+    ref: "aircraft_types",
   },
   weightLimits: {
     feulTank: {
@@ -27,9 +28,4 @@ const aircraftModificationSchema = new Schema({
   },
 });
 
-const AircraftModification = model(
-  "aircraft_modifications",
-  aircraftModificationSchema
-);
-
-module.exports = AircraftModification;
+module.exports = model("aircraft_modifications", aircraftModificationSchema);

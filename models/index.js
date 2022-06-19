@@ -8,6 +8,7 @@ const Aerodrome = require("./Aerodrome");
 const AircraftModification = require("./AircraftModification");
 const Briefcase = require("./Briefcase");
 const Efb = require("./Efb");
+const Aip = require("./Aip");
 
 module.exports = {
   Weather,
@@ -20,4 +21,5 @@ module.exports = {
   Aerodrome,
   Briefcase,
   Efb,
+  Aip,
 };

@@ -5,9 +5,7 @@ const organisationSchema = new Schema({
     type: String,
     required: true,
   },
-  contacts: [Schema.Types.ObjectId],
+  contacts: [{ type: Schema.Types.ObjectId, ref: "contacts" }],
 });
 
-const Organisation = model("organisations", organisationSchema);
-
-module.exports = Organisation;
+module.exports = model("organisations", organisationSchema);

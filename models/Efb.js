@@ -8,7 +8,4 @@ const efbSchema = new Schema({
   },
 });
 
-const Efb = model("efbs", efbSchema);
-
-module.exports = Efb;
-
+module.exports = model("efbs", efbSchema);
