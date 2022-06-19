@@ -6,9 +6,9 @@ const AircraftTypeSchema = new Schema({
     local: String, // RRJ95
     common: String, // Sukhoi Superjet 100
   },
-  modifications: [Schema.Types.ObjectId],
+  modifications: [
+    { type: Schema.Types.ObjectId, ref: "aircraft_modifications" },
+  ],
 });
 
-const AircraftType = model("aircraft_types", AircraftTypeSchema);
-
-module.exports = AircraftType;
+module.exports = model("aircraft_types", AircraftTypeSchema);
